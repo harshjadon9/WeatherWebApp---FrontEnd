@@ -1,0 +1,17 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.main {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: white;
+}
+.mainTempBox {
+  width: 390px;
+  height: 450px;
+  background: linear-gradient(335deg, #6498ff 0%, #9cbdff 100%);
+  border-radius: 27px;
+}
