@@ -1,17 +1,287 @@
-html, body {
+:root {
+  --blue: #5c92ff;
+  --green: #09c768;
+  --text: #363e64;
+  --cardsBorderRadius: 27px;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
   width: 100%;
   height: 100%;
   position: relative;
+  color: white;
+  font-weight: 300;
+  font-size: 20px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+img {
+  fill: white;
+}
+i {
+  font-size: 22px;
+  font-weight: 400;
+}
+.flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pageMain {
+  background-color: #f0f5ff;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
 }
 .main {
-  width: 100%;
-  height: 100%;
   position: relative;
-  background: white;
+  width: 80%;
+  height: 100%;
+}
+.sideMain {
+  padding: 40px;
+  background-color: white;
+  width: fit-content;
+  display: grid;
 }
 .mainTempBox {
-  width: 390px;
-  height: 450px;
+  position: relative;
+  width: 430px;
+  padding-top: 15px;
+  padding-bottom: 30px;
+  height: fit-content;
   background: linear-gradient(335deg, #6498ff 0%, #9cbdff 100%);
-  border-radius: 27px;
+  border-radius: var(--cardsBorderRadius);
+  overflow-x: hidden;
+}
+.recents {
+  padding-top: 15px;
+}
+.recent1 {
+  background: linear-gradient(335deg, #ff649d 0%, #fc9bc0 100%);
+}
+.recent2 {
+  background: linear-gradient(335deg, #ffae52 0%, #ffc480 100%);
+}
+.recentFlexBox {
+  margin-bottom: -8px;
+  padding-left: 40px;
+  padding-right: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.recentBoxSide {
+  display: grid;
+}
+.recentTempMain {
+  margin-top: -17px !important;
+  font-size: 42px !important;
+  text-align: left !important;
+}
+.topMainBox {
+  /* padding-top: 20px; */
+  padding-left: 35px;
+  padding-bottom: 0px;
+  display: flex;
+}
+.circle {
+  position: absolute;
+  background-color: #fff97a;
+  border-radius: 75px;
+}
+.c1 {
+  right: -6px;
+  top: -6px;
+  width: 70px;
+  height: 70px;
+}
+.c2 {
+  right: -19px;
+  top: -18px;
+  width: 100px;
+  height: 100px;
+  opacity: 0.3;
+  background-color: white;
+}
+.c3 {
+  right: -27px;
+  top: -26px;
+  width: 120px;
+  height: 120px;
+  opacity: 0.1;
+  background-color: white;
+}
+.c1 {
+  width: 70px;
+  height: 70px;
+}
+.topMainFlexBox {
+  gap: 4px;
+  display: flex;
+  align-items: center;
+}
+.topMainFlexBox p {
+  font-weight: 400;
+}
+.topMainFlexBox i:nth-child(3) {
+  font-size: medium;
+  padding-top: 2px;
+}
+.center {
+  width: 100%;
+  display: grid;
+  justify-content: center;
+}
+.mainImg {
+  margin-top: -20px;
+  height: 160px;
+  justify-self: center;
+}
+.shadow900 {
+  filter: drop-shadow(4px 15px 15px #6598ff);
+}
+.shadow100 {
+  filter: drop-shadow(0px 8px 15px #6598ff50);
+}
+.shadow200 {
+  filter: drop-shadow(0px 0px 30px #6598ff0e);
+}
+.shadow300blue {
+  filter: drop-shadow(0px 0px 8px #6598ff6f);
+}
+.shadow300red {
+  filter: drop-shadow(0px 0px 8px #ff649d6f);
+}
+.shadow300yellow {
+  filter: drop-shadow(0px 0px 8px #ffae526f);
+}
+.dateMain {
+  /* opacity: 0.8; */
+  text-align: center;
+}
+.tempMain {
+  margin: 0;
+  margin-top: -20px;
+  font-size: 72px;
+  font-weight: 700;
+  text-align: center;
+}
+.dayTypeMain {
+  margin-top: 50px;
+  margin-bottom: 10px;
+  font-size: 22px;
+  font-weight: 400;
+  text-align: center;
+}
+.mainDetailElement {
+  display: flex;
+  justify-content: center;
+  place-content: flex-start;
+}
+.mainDetailElement .flexCenter {
+  width: 80px;
+}
+.mainDetailElementBottom {
+  margin-top: -26px;
+}
+.mainDetailElement p {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/*  Main Page style */
+.main {
+  color: var(--text);
+  padding: 50px;
+}
+.dateTime i {
+  font-size: 42px;
+}
+.time {
+  font-size: 50px;
+  font-weight: 600;
+  color: var(--blue);
+  margin: 0;
+}
+.day {
+  font-weight: 600;
+  font-size: 14px;
+  margin: 0;
+}
+.greeting {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--blue);
+}
+.greeting i {
+  font-weight: 400;
+}
+
+/* cards */
+.daysForecast {
+  display: flex;
+  justify-content: space-between;
+}
+.daysForecast .card {
+  width: 140px;
+
+  padding-left: 0;
+}
+.card {
+  background-color: white;
+  padding-right: 0;
+  border-radius: var(--cardsBorderRadius);
+  padding-top: 38px;
+  padding-bottom: 27px;
+  display: grid;
+  justify-items: center;
+}
+.card:hover {
+  background: linear-gradient(335deg, #6498ff 0%, #9cbdff 100%);
+  color: white;
+}
+.card img {
+  height: 60px;
+  padding-bottom: 20px;
+}
+.card p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+  padding-top: 5px;
+}
+.card h3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* air quality index */
+.airQualityIndex .card {
+  width: 420px;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  justify-content: left;
+}
+.AQImain {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.AQImain i {
+  color: var(var(--green));
+  font-size: 36px;
+}
+.AQImain .AQImainHead p:first-child {
+  color: var(--green);
+}
+.AQImain .AQImainHead p:last-child {
+  font-size: 14px;
+  opacity: 0.3;
 }

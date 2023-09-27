@@ -6,11 +6,187 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons-react/dist/index.umd.min.js"></script> -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 </head>
 
 <body>
-    <div class="main">
-        <div class="mainTempBox"></div>
+    <div class="pageMain">
+        <div class="main">
+            <div class="dateTime">
+                <p class="time">02:32 PM</p>
+                <p class="day">Wednesday, 27th April, 2023</p>
+                <div class="greeting"><i class="ti ti-sun-high"></i>
+                    <p>Good morning
+                </div>
+                </p>
+            </div>
+            <div class="mainWidgets">
+                <div class="daysForecast">
+                    <div class="card shadow200">
+                        <img class="mainImg shadow100" src="./src/sunny.png" />
+                        <p>Mon</p>
+                        <p>21°C</p>
+                    </div>
+                    <div class="card shadow200">
+                        <img class="mainImg shadow100" src="./src/cloudy.png" />
+                        <p>Tue</p>
+                        <p>19°C</p>
+                    </div>
+                    <div class="card shadow200">
+                        <img class="mainImg shadow100" src="./src/sunny.png" />
+                        <p>Wed</p>
+                        <p>20°C</p>
+                    </div>
+                    <div class="card shadow200">
+                        <img class="mainImg shadow100" src="./src/sunnyRainThunder.png" />
+                        <p>Thu</p>
+                        <p>18°C</p>
+                    </div>
+                    <div class="card shadow200">
+                        <img class="mainImg shadow100" src="./src/thunderRain.png" />
+                        <p>Fri</p>
+                        <p>19°C</p>
+                    </div>
+                    <div class="card shadow200">
+                        <img class="mainImg shadow100" src="./src/cloudy.png" />
+                        <p>Sat</p>
+                        <p>20°C</p>
+                    </div>
+                    <div class="card shadow200">
+                        <img class="mainImg shadow100" src="./src/sunny.png" />
+                        <p>Sun</p>
+                        <p>23°C</p>
+                    </div>
+                </div>
+                <div class="airQualityIndex">
+                    <div class="card">
+                        <h3>Air Quality Index</h3>
+                        <div class="AQImain">
+                            <i class="ti ti-wind"></i>
+                            <div class="AQImainHead">
+                                <p>Good</p>
+                                <p>A perfect day for a walk!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="sideMain shadow200">
+            <div class="mainTempBox shadow300">
+                <div class="circles">
+                    <div class="circle c3"></div>
+                    <div class="circle c2"></div>
+                    <div class="circle c1"></div>
+                </div>
+
+                <div class="topMainBox">
+                    <div class="topMainFlexBox">
+                        <i class="ti ti-map-pin"></i>
+                        <p>Vellore</p>
+                        <i class="ti ti-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="center">
+                    <img class="mainImg shadow900" src="./src/thunderRain.png" />
+                    <p class="dateMain">
+                        Today, 28th September
+                    </p>
+                    <p class="tempMain">
+                        42°C
+                    </p>
+                    <p class="dayTypeMain">
+                        Sunny
+                    </p>
+                    <div class="mainDetailElement">
+                        <div class="flexCenter">
+                            <i class="ti ti-wind"></i>
+                            <p>Wind</p>
+                        </div>
+                        <p>|</p>
+                        <p>19 km/h</p>
+                    </div>
+                    <div class="mainDetailElement mainDetailElementBottom">
+                        <div class="flexCenter">
+                            <i class="ti ti-droplet"></i>
+                            <p>Hum</p>
+                        </div>
+                        <p>|</p>
+                        <p>22 %</p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="mainTempBox recents recent1 shadow300red">
+                <div class="recentFlexBox ">
+                    <div class="">
+                        <div class="mainDetailElement">
+                            <div class="flexCenter">
+                                <i class="ti ti-wind"></i>
+                                <p>Wind</p>
+                            </div>
+                            <p>|</p>
+                            <p>6 km/h</p>
+                        </div>
+                        <div class="mainDetailElement mainDetailElementBottom">
+                            <div class="flexCenter">
+                                <i class="ti ti-droplet"></i>
+                                <p>Hum</p>
+                            </div>
+                            <p>|</p>
+                            <p>25 %</p>
+                        </div>
+                    </div>
+                    <div class="recentBoxSide">
+                        <div class="topMainFlexBox">
+                            <i class="ti ti-map-pin"></i>
+                            <p>Pune</p>
+                            <i class="ti ti-chevron-down"></i>
+                        </div>
+                        <p class="  tempMain recentTempMain">
+                            36°C
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mainTempBox recents recent2 shadow300yellow">
+                <div class="recentFlexBox ">
+                    <div class="">
+                        <div class="mainDetailElement">
+                            <div class="flexCenter">
+                                <i class="ti ti-wind"></i>
+                                <p>Wind</p>
+                            </div>
+                            <p>|</p>
+                            <p>11 km/h</p>
+                        </div>
+                        <div class="mainDetailElement mainDetailElementBottom">
+                            <div class="flexCenter">
+                                <i class="ti ti-droplet"></i>
+                                <p>Hum</p>
+                            </div>
+                            <p>|</p>
+                            <p>19 %</p>
+                        </div>
+                    </div>
+                    <div class="recentBoxSide">
+                        <div class="topMainFlexBox">
+                            <i class="ti ti-map-pin"></i>
+                            <p>Delhi</p>
+                            <i class="ti ti-chevron-down"></i>
+                        </div>
+                        <p class="  tempMain recentTempMain">
+                            41°C
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </body>
 
