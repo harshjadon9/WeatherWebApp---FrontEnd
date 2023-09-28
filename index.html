@@ -12,15 +12,35 @@
 </head>
 
 <body>
+
     <div class="pageMain">
         <div class="main">
             <div class="dateTime">
-                <p class="time">02:32 PM</p>
-                <p class="day">Wednesday, 27th April, 2023</p>
-                <div class="greeting"><i class="ti ti-sun-high"></i>
-                    <p>Good morning
+                <div class="">
+                    <p class="time">02:32 PM</p>
+                    <p class="day">Wednesday, 27th April, 2023</p>
+                    <div class="greeting">
+                        <i class="ti ti-sun-high"></i>
+                        <p>Good morning</p>
+                    </div>
                 </div>
-                </p>
+                <div class="">
+                    <div class="searchBox shadow200">
+                        <div class="overlay"></div>
+                        <i class="ti ti-map-pin"></i>
+                        <input type="text" placeholder="Search by city name" />
+                    </div>
+                    <div class="tempUnitsliderBox">
+                        <div class="tempUnitSwitch shadow200">
+                            <p>°F</p>
+                            <label class="tempSwitch">
+                                <input type="checkbox" checked>
+                                <span class="tempUnitslider"></span>
+                            </label>
+                            <p>°C</p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="mainWidgets">
                 <div class="daysForecast">
@@ -367,4 +387,5 @@
 
     </div>
 </body>
+
 </html>
