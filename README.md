@@ -21,7 +21,7 @@ Highlights:
 Api used:
 
 https://developer.accuweather.com  
-https://openweathermap.org/api/
+https://openweathermap.org/api/ (50 calls / day)
 
 contact
 
