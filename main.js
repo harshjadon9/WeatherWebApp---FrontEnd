@@ -1,4 +1,4 @@
-var key = "tsNxsek92GBrwU53JGd2tJQdTvAG6ROr";
+var key = "kjTEdWekRlK0v6M8Op9bRVSf49QSYhqI";
 var openWeatherKey = "057ea05bc9005063c0e92dab1ff6b0c1";
 // var sunny = ["Sunny", "Mostly Sunny", "Partly Sunny"];
 // var night = ["Clear", "Mostly Clear"];
