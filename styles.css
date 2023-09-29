@@ -797,6 +797,8 @@ i {
     background: none;
     justify-self: center;
     color: white;
+    height: fit-content;
+    text-align: -webkit-center;
   }
   .mainTempBox {
     opacity: 0;
