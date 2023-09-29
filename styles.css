@@ -518,7 +518,7 @@ i {
 }
 .card h3 {
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
   padding-bottom: 6px;
 }
 
@@ -564,6 +564,7 @@ i {
 .AQImain .AQImainHead p:first-child {
   color: var(--green);
   font-size: 20px;
+  font-weight: 600;
 }
 .AQImain .AQImainHead p:last-child {
   font-size: 14px;
