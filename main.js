@@ -1,4 +1,4 @@
-var key = "jsu4nz1ntPFIeoL1ACMjKsbr8jKeKj7R";
+var key = "tsNxsek92GBrwU53JGd2tJQdTvAG6ROr";
 var openWeatherKey = "057ea05bc9005063c0e92dab1ff6b0c1";
 // var sunny = ["Sunny", "Mostly Sunny", "Partly Sunny"];
 // var night = ["Clear", "Mostly Clear"];
@@ -115,7 +115,12 @@ function showPosition(position) {
 
 // }
 $(document).ready(function () {
-  //   getLocation();
+  var windowsize = $(window).width();
+  if (windowsize < 800) {
+    //if the window is greater than 440px wide then turn on jScrollPane..
+    $(".sideMain").insertBefore(".mainWidgets");
+  }
+  getLocation();
 });
 
 $("#cityQuery").keyup(function (e) {
@@ -529,7 +534,9 @@ function featch5DaysForecast(id) {
         var weatherText = data.DailyForecasts[index].Day.IconPhrase;
         var icon = weatherIcon(weatherText, true);
         day = { dayShort, temp, icon };
-        $(".daysForecast").append(`<div class="card shadow200">
+        $(".daysForecast").append(`<div class="card shadow200 delay${
+          index * 30
+        }">
                         <img class="mainImg shadow100" src="./src/${icon}.png" />
                         <p>${dayShort}</p>
                         <p>${temp}°C</p>

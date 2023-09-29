@@ -21,6 +21,7 @@
 <body>
     <div class="overlay"></div>
     <div class="pageMain">
+
         <div class="main">
             <div class="dateTime">
                 <div class="">
@@ -68,9 +69,9 @@
                 </div>
             </div>
             <div class="mainWidgets">
-                <!-- 
+
                 <div class="daysForecast">
-                    <div class="card shadow200">
+                    <div class="card shadow200 delay200">
                         <img class="mainImg shadow100" src="./src/sunny.png" />
                         <p>Wed</p>
                         <p>20°C</p>
@@ -96,7 +97,7 @@
                         <p>23°C</p>
                     </div>
                 </div>
-                 -->
+
                 <div class="widgetFlex">
                     <div class="leftSideWidgets">
                         <div class="airQualityIndex shadow200">
@@ -276,7 +277,7 @@
                 </div>
             </div>
         </div>
-        <!-- 
+
         <div class="sideMain shadow200">
             <div class="mainTempBox shadow300blue">
                 <div class="circles">
@@ -289,7 +290,7 @@
                     <div class="topMainFlexBox">
                         <i class="ti ti-map-pin"></i>
                         <p id="location">Vellore</p>
-                        
+
                     </div>
                 </div>
                 <div class="center">
@@ -346,7 +347,7 @@
                         <div class="topMainFlexBox">
                             <i class="ti ti-map-pin"></i>
                             <p>Pune</p>
-                            
+
                         </div>
                         <p class="  tempMainRecent recentTempMain">
                             31°C
@@ -379,7 +380,7 @@
                         <div class="topMainFlexBox">
                             <i class="ti ti-map-pin"></i>
                             <p>Delhi</p>
-                            
+
                         </div>
                         <p class="  tempMain recentTempMain">
                             41°C
@@ -387,11 +388,18 @@
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
 
     </div>
     <script src="main.js"></script>
-
+    <script>
+        console.log("asd");
+        window.addEventListener("load", function () {
+            const overlay = document.querySelector(".overlay");
+            overlay.className += " hidden";
+            document.body.style.overflow = "auto";
+        });
+    </script>
 </body>
 
 </html>

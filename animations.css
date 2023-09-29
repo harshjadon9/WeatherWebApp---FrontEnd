@@ -53,3 +53,102 @@
     transform: translate(24px, 0);
   }
 }
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeAndSlideup {
+  0% {
+    opacity: 0;
+    transform: translate(0px, 100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
+@keyframes slideupsmallandfade {
+  0% {
+    opacity: 0;
+    transform: translate(0px, 20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
+@keyframes slidedownandfade {
+  0% {
+    opacity: 0;
+    transform: translate(0px, -100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
+@keyframes fadeAndSlideleft {
+  0% {
+    opacity: 0;
+    transform: translate(100px, 0px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
+@keyframes slidedown {
+  0% {
+    transform: translate(0px, -100px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+.delay30 {
+  animation-delay: 30ms;
+}
+.delay60 {
+  animation-delay: 60ms;
+}
+.delay90 {
+  animation-delay: 90ms;
+}
+.delay120 {
+  animation-delay: 120ms;
+}
+.delay150 {
+  animation-delay: 150ms;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  display: grid;
+  z-index: 13;
+  background-color: white;
+  backdrop-filter: blur(16px);
+  transition: all 1s ease;
+}
+/* .overlay h2 {
+  width: fit-content;
+  margin: auto;
+  display: none;
+} */
+.hidden {
+  animation: fadeout 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeout {
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}

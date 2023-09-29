@@ -9,7 +9,8 @@
   --yellow: #ffbc6f;
   --blueGradient: linear-gradient(335deg, #6498ff 0%, #9cbdff 100%);
   --cardsBorderRadius: 27px;
-  ---gap: 20px;
+  --gap: 20px;
+  --animation-duration: 0.6s;
 }
 html,
 body {
@@ -31,13 +32,6 @@ img {
 i {
   font-size: 22px;
   font-weight: 400;
-}
-.overlay {
-  height: 100%;
-  width: 100%;
-  backdrop-filter: blur(6px);
-  position: absolute;
-  z-index: -1;
 }
 .flexCenter {
   display: flex;
@@ -238,7 +232,7 @@ i {
   margin: 0;
 }
 .day {
-  font-weight: 600;
+  font-weight: 500;
   font-size: 14px;
   margin: 0;
 }
@@ -430,6 +424,9 @@ i {
   display: grid;
   padding-left: 0;
   width: -webkit-fill-available;
+  animation-fill-mode: forwards;
+  animation-name: fadeAndSlideup;
+  animation-duration: var(--animation-duration);
 }
 .daysForecast .card:hover {
   background: linear-gradient(335deg, #6498ff 0%, #9cbdff 100%);
@@ -478,6 +475,14 @@ i {
 }
 
 /* air quality index */
+.airQualityIndex {
+  opacity: 0;
+
+  animation-fill-mode: forwards;
+  animation-name: fadeAndSlideup;
+  animation-delay: 100ms;
+  animation-duration: var(--animation-duration);
+}
 .airQualityIndex .card {
   width: 100%;
   padding: 10px;
@@ -531,6 +536,13 @@ i {
 }
 
 /* Probabilities */
+.probabilities {
+  opacity: 0;
+  animation-fill-mode: forwards;
+  animation-name: fadeAndSlideup;
+  animation-delay: 250ms;
+  animation-duration: var(--animation-duration);
+}
 .probabilities div div {
   text-align: -webkit-center;
 }
@@ -591,6 +603,11 @@ i {
 .sunRiseSet {
   box-sizing: border-box;
   width: 49%;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  animation-name: fadeAndSlideup;
+  animation-delay: 150ms;
+  animation-duration: var(--animation-duration);
 }
 .sunRiseSet .card {
   width: 100%;
@@ -687,13 +704,73 @@ i {
     width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
   }
   .main {
+    padding-top: 15px;
     padding-left: 0px;
     padding-right: 00px;
+    padding-bottom: 20px;
     width: 100%;
   }
   .dateTime {
     display: grid;
+    padding-left: 20px;
+    padding-bottom: 20px;
   }
+  .time {
+    font-size: 43px;
+  }
+  .day {
+    font-size: 13px;
+  }
+  .greeting {
+    font-size: 20px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+  }
+  .greeting i {
+    font-size: 25px;
+  }
+  .searchBox {
+    width: 95%;
+  }
+  .daysForecast {
+    display: none;
+    opacity: 0;
+  }
+
+  .sideMain {
+    padding: 0;
+    width: 100%;
+    background: none;
+    justify-self: center;
+    color: white;
+  }
+  .mainTempBox {
+    opacity: 0;
+    width: 90%;
+    overflow-x: inherit;
+    justify-self: center;
+    margin-bottom: 25px;
+    margin-top: 40px;
+    animation-fill-mode: forwards;
+    animation-name: fadeAndSlideup;
+    animation-delay: 400ms;
+    animation-duration: var(--animation-duration);
+  }
+  .mainImg {
+    height: 200px;
+    margin-top: -80px;
+    margin-bottom: -30px;
+  }
+  .recents {
+    display: none;
+  }
+  .circles,
+  .topMainBox,
+  .dayTypeMain,
+  .mainDetailElement {
+    display: none;
+  }
+
   .tempUnitsliderBox {
     display: none;
   }
@@ -701,18 +778,22 @@ i {
     width: 100%;
   }
   .widgetFlex {
-    display: grid;
+    display: block;
     width: 100%;
     place-items: center;
+    justify-content: center;
   }
   .leftSideWidgets {
     width: 90%;
-  }
-  .sunRiseSet {
+    margin: auto;
   }
 
   .sunRiseSet {
     width: 90%;
+    margin: auto;
+  }
+  .sunRiseSet .card {
+    padding-bottom: 15px;
   }
   .sunRiseSet .topMainFlexBox {
     margin-top: -10px;
@@ -757,27 +838,28 @@ i {
   .AQIcards div {
     padding: 10px;
   }
-  .AQIcards div p:first-child {
-    font-size: 15px;
+  .AQIcards > div:first-child {
+    display: none;
   }
-  .AQIcards div p:last-child {
+  .AQIcards div p:first-child {
     font-size: 13px;
   }
-  .daysForecast {
-    gap: 12px;
-    display: grid;
-  }
-  .daysForecast .card {
+  .AQIcards div p:last-child {
+    font-size: 12px;
   }
   .probabilityPillBox {
+    width: 100%;
+  }
+  .probabilityPillBox .shadowPill:nth-child(4) {
+    display: none;
     width: 100%;
   }
   .probabilities .card div div div {
     width: 30px;
     height: 60px;
     padding-bottom: 3px;
-    padding-left: 7px;
-    padding-right: 7px;
+    padding-left: 10px;
+    padding-right: 10px;
     padding-top: 8px;
   }
   .probabilities .card div div div i {
