@@ -20,8 +20,8 @@ Highlights:
  
 Api used:
 
-https://developer.accuweather.com  
-https://openweathermap.org/api/ (50 calls / day)
+https://developer.accuweather.com (50 calls / day)
+https://openweathermap.org/api/ 
 
 contact
 
