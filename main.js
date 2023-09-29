@@ -196,11 +196,11 @@ function searchResultFiller(results) {
 function selectFromSuggestions(selected) {
   $(".citySuggestions").css("display", "none");
   $("#cityQuery").val(selected[1] + ", " + selected[2] + ", " + selected[3]);
-  fetchForecast(selected[0], selected[1]);
-  fetchProbs(selected[0]);
-  fetchHorlyForecast(selected[0]);
-  featch5DaysForecast(selected[0]);
-  getLatLong();
+  //   fetchForecast(selected[0], selected[1]);
+  //   fetchProbs(selected[0]);
+  //   fetchHorlyForecast(selected[0]);
+  //   featch5DaysForecast(selected[0]);
+  //   getLatLong();
 }
 
 function fetchForecast(id, location) {

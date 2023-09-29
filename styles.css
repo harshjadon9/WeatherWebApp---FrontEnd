@@ -14,6 +14,7 @@
 }
 html,
 body {
+  zoom: 1;
   background-color: var(--lightBlue);
   margin: 0;
   padding: 0;
@@ -58,7 +59,8 @@ i {
   padding: 40px;
   background-color: white;
   width: fit-content;
-  display: grid;
+  display: block;
+  height: fit-content;
 }
 .mainTempBox {
   opacity: 0;
@@ -81,6 +83,7 @@ i {
 }
 .mainTempBox {
   color: white;
+  margin-bottom: 30px;
 }
 .mainTempBox:hover {
   transform: scale(1.01);
