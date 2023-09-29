@@ -16,4 +16,6 @@ Api used:
 https://developer.accuweather.com  
 https://openweathermap.org/api/
 
-contact:harshjadon9@gmail.com
+contact
+
+harshjadon9@gmail.com
