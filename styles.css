@@ -94,6 +94,7 @@ i {
 }
 .recentBoxSide {
   display: grid;
+  margin-top: -10px;
 }
 .recentTempMain {
   margin-top: -17px !important;
@@ -267,7 +268,7 @@ i {
   font-size: 22px;
 }
 .searchBox input {
-  min-width: 200px;
+  min-width: 250px;
   padding: 15px;
   padding-left: 12px;
   padding-right: 0;
@@ -284,8 +285,71 @@ i {
   /* border: 3px solid var(--blue); */
   transform: scale(1.02);
 }
-.searchBox:focus-within .overlay {
+.searchBox:focus-within + .overlay {
   z-index: 1;
+}
+
+/* suggestions */
+.citySuggestions {
+  display: none;
+  position: absolute;
+  margin-top: 70px;
+  height: fit-content;
+  width: 260px;
+  background-color: white;
+  z-index: 12;
+  border-radius: 14px;
+  padding-top: 10px;
+  padding-left: 0px;
+  padding-right: 10px;
+}
+.citySuggestions .qCityBox {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  width: 80%;
+  align-items: center;
+  border-radius: 15px;
+  padding-top: 2px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 10px;
+}
+.qCityBox:hover {
+  cursor: pointer;
+  color: white;
+  background: var(--blue);
+}
+.qCityBox i {
+  font-size: 25px;
+  align-items: center;
+  margin-top: -8px;
+}
+.citySuggestions .qCityData {
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+.qCityName {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+.qCityDetails {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  opacity: 0.7;
+}
+.qLoading {
+  width: 100%;
+  text-align: center;
+}
+.noResults {
+  font-size: 15px;
+  font-weight: 400;
+  text-align: center;
+  padding-bottom: 11px;
+  opacity: 0.7;
 }
 
 /* switch */
@@ -355,11 +419,13 @@ i {
 .daysForecast {
   display: flex;
   justify-content: space-between;
+  gap: 20px;
 }
 .daysForecast .card {
   width: 140px;
   display: grid;
   padding-left: 0;
+  width: -webkit-fill-available;
 }
 .daysForecast .card:hover {
   background: linear-gradient(335deg, #6498ff 0%, #9cbdff 100%);

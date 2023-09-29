@@ -6,13 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animations.css">
     <!-- <script src="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons-react/dist/index.umd.min.js"></script> -->
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <!-- moments -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+
 </head>
 
 <body>
-
+    <div class="overlay"></div>
     <div class="pageMain">
         <div class="main">
             <div class="dateTime">
@@ -21,14 +28,32 @@
                     <p class="day">Wednesday, 27th April, 2023</p>
                     <div class="greeting">
                         <i class="ti ti-sun-high"></i>
-                        <p>Good morning</p>
+                        <p id="greetingText">Good morning</p>
                     </div>
                 </div>
-                <div class="">
-                    <div class="searchBox shadow200">
-                        <div class="overlay"></div>
+                <div>
+                    <div id="citySuggestions" class="citySuggestions shadow200">
+                        <div class="qLoading">
+                            <div class="lds-ellipsis">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+                        <div class="addResultsHere">
+                            <!-- <div class="qCityBox">
+                            <div class="qCityData">
+                                <p class="qCityName">Vellore</p>
+                                <p class="qCityDetails">Tamil Nadu, India</p>
+                            </div>
+                            <i class="ti ti-map-pin"></i>
+                        </div> -->
+                        </div>
+                    </div>
+                    <div class="searchBox shadow200" onclick="qLoading()">
                         <i class="ti ti-map-pin"></i>
-                        <input type="text" placeholder="Search by city name" />
+                        <input id="cityQuery" type="text" placeholder="Search by city name" />
                     </div>
                     <div class="tempUnitsliderBox">
                         <div class="tempUnitSwitch shadow200">
@@ -44,16 +69,6 @@
             </div>
             <div class="mainWidgets">
                 <div class="daysForecast">
-                    <div class="card shadow200">
-                        <img class="mainImg shadow100" src="./src/sunny.png" />
-                        <p>Mon</p>
-                        <p>21°C</p>
-                    </div>
-                    <div class="card shadow200">
-                        <img class="mainImg shadow100" src="./src/cloudy.png" />
-                        <p>Tue</p>
-                        <p>19°C</p>
-                    </div>
                     <div class="card shadow200">
                         <img class="mainImg shadow100" src="./src/sunny.png" />
                         <p>Wed</p>
@@ -86,36 +101,32 @@
                             <div class="card">
                                 <h3>Air Quality Index</h3>
                                 <div class="AQImain">
-                                    <i class="ti ti-wind"></i>
+                                    <i class="ti ti-wind AQIicon"></i>
                                     <div class="AQImainHead">
-                                        <p>Good</p>
-                                        <p>A perfect day for a walk!</p>
+                                        <p id="AQITitle">Good</p>
+                                        <p id="AQIText">A perfect day for a walk!</p>
                                     </div>
                                 </div>
                                 <div class="AQIcards">
-                                    <div>
-                                        <p>0.5</p>
-                                        <p>PM2</p>
+                                    <div class="AQIcardLight">
+                                        <p id="pm2">0.5</p>
+                                        <p id="pm2_">PM2</p>
                                     </div>
-                                    <div>
-                                        <p>9.3</p>
-                                        <p>SO2</p>
+                                    <div class="AQIcardLight">
+                                        <p id="so2">9.3</p>
+                                        <p id="so2_">SO2</p>
                                     </div>
-                                    <div>
-                                        <p>0.7</p>
-                                        <p>NO2</p>
+                                    <div class="AQIcardLight">
+                                        <p id="no2">0.7</p>
+                                        <p id="no2_">NO2</p>
                                     </div>
-                                    <div>
-                                        <p>0.54</p>
-                                        <p>PM10</p>
+                                    <div class="AQIcardLight">
+                                        <p id="o3">68.7</p>
+                                        <p id="o3_">O3</p>
                                     </div>
-                                    <div>
-                                        <p>68.7</p>
-                                        <p>O3</p>
-                                    </div>
-                                    <div>
-                                        <p>207.8</p>
-                                        <p>CO</p>
+                                    <div class="AQIcardLight">
+                                        <p id="co">207.8</p>
+                                        <p id="co_">CO</p>
                                     </div>
                                 </div>
                             </div>
@@ -128,23 +139,23 @@
                                     <div class="probabilityPillBox">
                                         <div class="shadowPill">
                                             <i class="ti ti-cloud"></i>
-                                            <p>40%</p>
+                                            <p id="cloudyProb">40%</p>
                                         </div>
                                         <div class="shadowPill">
                                             <i class="ti ti-cloud-rain"></i>
-                                            <p>40%</p>
+                                            <p id="rainProb">40%</p>
                                         </div>
                                         <div class="shadowPill">
                                             <i class="ti ti-cloud-storm"></i>
-                                            <p>10%</p>
+                                            <p id="thunderProb">10%</p>
                                         </div>
                                         <div class="shadowPill">
                                             <i class="ti ti-cloud-snow"></i>
-                                            <p>0%</p>
+                                            <p id="snowProb">0%</p>
                                         </div>
                                         <div class="shadowPill">
                                             <i class="ti ti-uv-index"></i>
-                                            <p>9.23</p>
+                                            <p id="UVindex">9.23</p>
                                         </div>
                                     </div>
                                 </div>
@@ -157,7 +168,7 @@
                                 <h3>Sunrise & Sunset</h3>
                                 <div class="topMainFlexBox">
                                     <i class="ti ti-map-pin"></i>
-                                    <p>Pune</p>
+                                    <p id="location1">Pune</p>
                                 </div>
                             </div>
                             <div class="yellowCard">
@@ -165,106 +176,108 @@
                                     <i class="ti ti-sun-high"></i>
                                     <div class="sunTextBox">
                                         <p class="sunText">Sunrise</p>
-                                        <p class="sunTime">04:40 AM</p>
+                                        <p id="sunRiseTime" class="sunTime">04:40 AM</p>
                                     </div>
                                 </div>
                                 <div class="sunRiseBox">
                                     <i class="ti ti-moon-stars"></i>
                                     <div class="sunTextBox">
                                         <p class="sunText">Sunset</p>
-                                        <p class="sunTime">06:53 PM</p>
+                                        <p id="sunSetTime" class="sunTime">06:53 PM</p>
                                     </div>
                                 </div>
                             </div>
                             <h3>5 Hours forecast</h3>
-                            <div class="timeTempBox">
-                                <div class="flexCenter">
-                                    <i class="ti ti-clock-hour-4"></i>
-                                    <p>08:00 PM</P>
+                            <div id="appendHereHours">
+                                <div class="timeTempBox">
+                                    <div class="flexCenter">
+                                        <i class="ti ti-clock-hour-4"></i>
+                                        <p>08:00 PM</P>
+                                    </div>
+                                    <div class="flexCenter">
+                                        <i class="ti ti-temperature"></i>
+                                        <p>28°C</p>
+                                    </div>
+                                    <div class="flexCenter">
+                                        <i class="ti ti-cloud-rain"></i>
+                                        <p>30%</p>
+                                    </div>
+                                    <div class="flexCenter">
+                                        <i class="ti ti-wind"></i>
+                                        <p>8KM/h</p>
+                                    </div>
                                 </div>
-                                <div class="flexCenter">
-                                    <i class="ti ti-temperature"></i>
-                                    <p>28°C</p>
+                                <div class="timeTempBox">
+                                    <div class="flexCenter">
+                                        <i class="ti ti-clock-hour-4"></i>
+                                        <p>09:00 PM</P>
+                                    </div>
+                                    <div class="flexCenter">
+                                        <i class="ti ti-temperature"></i>
+                                        <p>23°C</p>
+                                    </div>
+                                    <div class="flexCenter">
+                                        <i class="ti ti-cloud-rain"></i>
+                                        <p>25%</p>
+                                    </div>
+                                    <div class="flexCenter">
+                                        <i class="ti ti-wind"></i>
+                                        <p>15KM/h</p>
+                                    </div>
                                 </div>
-                                <div class="flexCenter">
-                                    <i class="ti ti-cloud-rain"></i>
-                                    <p>30%</p>
+                                <div class="timeTempBox">
+                                    <div class="flexCenter">
+                                        <i class="ti ti-clock-hour-4"></i>
+                                        <p>10:00 PM</P>
+                                    </div>
+                                    <div class="flexCenter">
+                                        <i class="ti ti-temperature"></i>
+                                        <p>22°C</p>
+                                    </div>
+                                    <div class="flexCenter">
+                                        <i class="ti ti-cloud-rain"></i>
+                                        <p>10%</p>
+                                    </div>
+                                    <div class="flexCenter">
+                                        <i class="ti ti-wind"></i>
+                                        <p>19KM/h</p>
+                                    </div>
                                 </div>
-                                <div class="flexCenter">
-                                    <i class="ti ti-wind"></i>
-                                    <p>8KM/h</p>
+                                <div class="timeTempBox">
+                                    <div class="flexCenter">
+                                        <i class="ti ti-clock-hour-4"></i>
+                                        <p>11:00 PM</P>
+                                    </div>
+                                    <div class="flexCenter">
+                                        <i class="ti ti-temperature"></i>
+                                        <p>28°C</p>
+                                    </div>
+                                    <div class="flexCenter">
+                                        <i class="ti ti-cloud-rain"></i>
+                                        <p>30%</p>
+                                    </div>
+                                    <div class="flexCenter">
+                                        <i class="ti ti-wind"></i>
+                                        <p>8KM/h</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="timeTempBox">
-                                <div class="flexCenter">
-                                    <i class="ti ti-clock-hour-4"></i>
-                                    <p>09:00 PM</P>
-                                </div>
-                                <div class="flexCenter">
-                                    <i class="ti ti-temperature"></i>
-                                    <p>23°C</p>
-                                </div>
-                                <div class="flexCenter">
-                                    <i class="ti ti-cloud-rain"></i>
-                                    <p>25%</p>
-                                </div>
-                                <div class="flexCenter">
-                                    <i class="ti ti-wind"></i>
-                                    <p>15KM/h</p>
-                                </div>
-                            </div>
-                            <div class="timeTempBox">
-                                <div class="flexCenter">
-                                    <i class="ti ti-clock-hour-4"></i>
-                                    <p>10:00 PM</P>
-                                </div>
-                                <div class="flexCenter">
-                                    <i class="ti ti-temperature"></i>
-                                    <p>22°C</p>
-                                </div>
-                                <div class="flexCenter">
-                                    <i class="ti ti-cloud-rain"></i>
-                                    <p>10%</p>
-                                </div>
-                                <div class="flexCenter">
-                                    <i class="ti ti-wind"></i>
-                                    <p>19KM/h</p>
-                                </div>
-                            </div>
-                            <div class="timeTempBox">
-                                <div class="flexCenter">
-                                    <i class="ti ti-clock-hour-4"></i>
-                                    <p>11:00 PM</P>
-                                </div>
-                                <div class="flexCenter">
-                                    <i class="ti ti-temperature"></i>
-                                    <p>28°C</p>
-                                </div>
-                                <div class="flexCenter">
-                                    <i class="ti ti-cloud-rain"></i>
-                                    <p>30%</p>
-                                </div>
-                                <div class="flexCenter">
-                                    <i class="ti ti-wind"></i>
-                                    <p>8KM/h</p>
-                                </div>
-                            </div>
-                            <div class="timeTempBox">
-                                <div class="flexCenter">
-                                    <i class="ti ti-clock-hour-4"></i>
-                                    <p>12:00 PM</P>
-                                </div>
-                                <div class="flexCenter">
-                                    <i class="ti ti-temperature"></i>
-                                    <p>23°C</p>
-                                </div>
-                                <div class="flexCenter">
-                                    <i class="ti ti-cloud-rain"></i>
-                                    <p>25%</p>
-                                </div>
-                                <div class="flexCenter">
-                                    <i class="ti ti-wind"></i>
-                                    <p>15KM/h</p>
+                                <div class="timeTempBox">
+                                    <div class="flexCenter">
+                                        <i class="ti ti-clock-hour-4"></i>
+                                        <p>12:00 PM</P>
+                                    </div>
+                                    <div class="flexCenter">
+                                        <i class="ti ti-temperature"></i>
+                                        <p>23°C</p>
+                                    </div>
+                                    <div class="flexCenter">
+                                        <i class="ti ti-cloud-rain"></i>
+                                        <p>25%</p>
+                                    </div>
+                                    <div class="flexCenter">
+                                        <i class="ti ti-wind"></i>
+                                        <p>15KM/h</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -284,8 +297,8 @@
                 <div class="topMainBox">
                     <div class="topMainFlexBox">
                         <i class="ti ti-map-pin"></i>
-                        <p>Vellore</p>
-                        <i class="ti ti-chevron-down"></i>
+                        <p id="location">Vellore</p>
+                        <!-- <i class="ti ti-chevron-down"></i> -->
                     </div>
                 </div>
                 <div class="center">
@@ -293,7 +306,7 @@
                     <p class="dateMain">
                         Today, 28th September
                     </p>
-                    <p class="tempMain">
+                    <p class="tempMain tempMainMain">
                         42°C
                     </p>
                     <p class="dayTypeMain">
@@ -305,7 +318,7 @@
                             <p>Wind</p>
                         </div>
                         <p>|</p>
-                        <p>19 km/h</p>
+                        <p id="windSpeed">19 km/h</p>
                     </div>
                     <div class="mainDetailElement mainDetailElementBottom">
                         <div class="flexCenter">
@@ -313,7 +326,7 @@
                             <p>Hum</p>
                         </div>
                         <p>|</p>
-                        <p>22 %</p>
+                        <p id="hum">22 %</p>
 
                     </div>
                 </div>
@@ -335,17 +348,17 @@
                                 <p>Hum</p>
                             </div>
                             <p>|</p>
-                            <p>25 %</p>
+                            <p>60 %</p>
                         </div>
                     </div>
                     <div class="recentBoxSide">
                         <div class="topMainFlexBox">
                             <i class="ti ti-map-pin"></i>
                             <p>Pune</p>
-                            <i class="ti ti-chevron-down"></i>
+                            <!-- <i class="ti ti-chevron-down"></i> -->
                         </div>
                         <p class="  tempMain recentTempMain">
-                            36°C
+                            31°C
                         </p>
                     </div>
                 </div>
@@ -368,17 +381,17 @@
                                 <p>Hum</p>
                             </div>
                             <p>|</p>
-                            <p>19 %</p>
+                            <p>31 %</p>
                         </div>
                     </div>
                     <div class="recentBoxSide">
                         <div class="topMainFlexBox">
                             <i class="ti ti-map-pin"></i>
                             <p>Delhi</p>
-                            <i class="ti ti-chevron-down"></i>
+                            <!-- <i class="ti ti-chevron-down"></i> -->
                         </div>
                         <p class="  tempMain recentTempMain">
-                            41°C
+                            36°C
                         </p>
                     </div>
                 </div>
@@ -386,6 +399,8 @@
         </div>
 
     </div>
+    <script src="main.js"></script>
+
 </body>
 
 </html>
