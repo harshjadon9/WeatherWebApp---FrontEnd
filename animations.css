@@ -72,6 +72,16 @@
     transform: translate(0px, 0px);
   }
 }
+@keyframes fadeAndSlideupSmall {
+  0% {
+    opacity: 0;
+    transform: translate(0px, 30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
 @keyframes slideupsmallandfade {
   0% {
     opacity: 0;
@@ -102,11 +112,13 @@
     transform: translate(0px, 0px);
   }
 }
-@keyframes slidedown {
+@keyframes fadeAndSlidedown {
   0% {
+    opacity: 0;
     transform: translate(0px, -100px);
   }
   100% {
+    opacity: 1;
     transform: translate(0px, 0px);
   }
 }
@@ -136,6 +148,7 @@
   background-color: white;
   backdrop-filter: blur(16px);
   transition: all 1s ease;
+  display: none;
 }
 /* .overlay h2 {
   width: fit-content;
