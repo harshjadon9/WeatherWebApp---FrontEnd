@@ -16,7 +16,7 @@
 }
 html,
 body {
-  zoom: 1;
+  zoom: 0.75;
   background-color: var(--lightBlue);
   margin: 0;
   padding: 0;
