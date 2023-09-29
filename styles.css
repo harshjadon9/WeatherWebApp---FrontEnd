@@ -6,6 +6,7 @@
   --yellow: #ffbc6f;
   --blueGradient: linear-gradient(335deg, #6498ff 0%, #9cbdff 100%);
   --cardsBorderRadius: 27px;
+  ---gap: 20px;
 }
 html,
 body {
@@ -671,4 +672,51 @@ i {
 .sunRiseSet .timeTempBox .flexCenter p {
   opacity: 0.8;
   margin-top: -5px;
+}
+
+/* responsive css */
+
+@media screen and (max-width: 800px) {
+  .pageMain {
+    display: grid;
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+  .main {
+    padding-left: 0px;
+    padding-right: 00px;
+  }
+  .dateTime {
+    display: grid;
+  }
+  .tempUnitsliderBox {
+    display: none;
+  }
+  .mainWidgets {
+    width: 100%;
+  }
+  .widgetFlex {
+    display: grid;
+    width: 90%;
+  }
+  .leftSideWidgets {
+    width: 100%;
+  }
+  .airQualityIndex .card {
+    width: 100%;
+  }
+  .AQIcards div {
+    padding: 10px;
+  }
+  .AQIcards div p:first-child {
+    font-size: 15px;
+  }
+  .AQIcards div p:last-child {
+    font-size: 13px;
+  }
+  .daysForecast {
+    gap: 12px;
+    display: grid;
+  }
+  .daysForecast .card {
+  }
 }
