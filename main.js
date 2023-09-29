@@ -491,10 +491,6 @@ function fetchHorlyForecast(id) {
                                           <i class="ti ti-cloud-rain"></i>
                                           <p>${rain}%</p>
                                       </div>
-                                      <div class="flexCenter">
-                                          <i class="ti ti-wind"></i>
-                                          <p>${wind}KM/h</p>
-                                      </div>
                                   </div>`);
       }
       console.log(hourForecast);
