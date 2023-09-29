@@ -60,7 +60,7 @@ i {
   background-color: white;
   width: fit-content;
   display: block;
-  height: fit-content;
+  height: 100%;
 }
 .mainTempBox {
   opacity: 0;
