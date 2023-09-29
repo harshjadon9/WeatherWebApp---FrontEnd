@@ -68,7 +68,7 @@ function showPosition(position) {
   console.log(position.coords.latitude, position.coords.longitude);
   $.ajax({
     // Our sample url to make request
-    url: `http://api.openweathermap.org/geo/1.0/reverse?lat=${position.coords.latitude}&lon=${position.coords.longitude}&limit=1&appid=${openWeatherKey}`,
+    url: `https://api.openweathermap.org/geo/1.0/reverse?lat=${position.coords.latitude}&lon=${position.coords.longitude}&limit=1&appid=${openWeatherKey}`,
     // Type of Request
     type: "GET",
 
@@ -78,7 +78,7 @@ function showPosition(position) {
       console.log(data);
       $.ajax({
         // Our sample url to make request
-        url: `http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${key}&q=${data[0]["name"]}`,
+        url: `https://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${key}&q=${data[0]["name"]}`,
         // Type of Request
         type: "GET",
 
@@ -141,7 +141,7 @@ function getCityAutocomplete() {
   var cityQ = $("#cityQuery").val();
   $.ajax({
     // Our sample url to make request
-    url: `http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${key}&q=${cityQ}`,
+    url: `https://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=${key}&q=${cityQ}`,
     // Type of Request
     type: "GET",
 
@@ -207,7 +207,7 @@ function fetchForecast(id, location) {
   console.log(id, location);
   $.ajax({
     // Our sample url to make request
-    url: `http://dataservice.accuweather.com/currentconditions/v1/${id}?apikey=${key}&details=true`,
+    url: `https://dataservice.accuweather.com/currentconditions/v1/${id}?apikey=${key}&details=true`,
     // Type of Request
     type: "GET",
 
@@ -320,7 +320,7 @@ function getLatLong() {
   var q = $("#cityQuery").val();
   $.ajax({
     // Our sample url to make request
-    url: `http://api.openweathermap.org/geo/1.0/direct?q=${q}&limit=1&appid=${openWeatherKey}`,
+    url: `https://api.openweathermap.org/geo/1.0/direct?q=${q}&limit=1&appid=${openWeatherKey}`,
     // Type of Request
     type: "GET",
 
@@ -341,7 +341,7 @@ function getLatLong() {
 function getAQI(lat, lon) {
   $.ajax({
     // Our sample url to make request
-    url: `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${openWeatherKey}`,
+    url: `https://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${openWeatherKey}`,
     // Type of Request
     type: "GET",
 
@@ -411,7 +411,7 @@ function fetchProbs(id) {
   console.log(id);
   $.ajax({
     // Our sample url to make request
-    url: `http://dataservice.accuweather.com/forecasts/v1/daily/1day/${id}?apikey=${key}&details=true&metric=true`,
+    url: `https://dataservice.accuweather.com/forecasts/v1/daily/1day/${id}?apikey=${key}&details=true&metric=true`,
     // Type of Request
     type: "GET",
 
@@ -462,7 +462,7 @@ function fetchHorlyForecast(id) {
   console.log(id);
   $.ajax({
     // Our sample url to make request
-    url: `http://dataservice.accuweather.com/forecasts/v1/hourly/12hour/${id}?apikey=${key}&details=true&metric=true`,
+    url: `https://dataservice.accuweather.com/forecasts/v1/hourly/12hour/${id}?apikey=${key}&details=true&metric=true`,
     // Type of Request
     type: "GET",
 
@@ -512,7 +512,7 @@ function featch5DaysForecast(id) {
   console.log(id);
   $.ajax({
     // Our sample url to make request
-    url: `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${id}?apikey=${key}&details=true&metric=true`,
+    url: `https://dataservice.accuweather.com/forecasts/v1/daily/5day/${id}?apikey=${key}&details=true&metric=true`,
     // Type of Request
     type: "GET",
 
