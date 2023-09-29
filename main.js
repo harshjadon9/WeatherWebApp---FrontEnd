@@ -276,7 +276,7 @@ function setForecast(forecast) {
   $(".dayTypeMain").text(forecast["weatherText"]);
   $("#windSpeed").text(forecast["windSpeed"] + " km/h");
   $("#hum").text(forecast["hum"] + " %");
-  $(".mainImg").attr("src", `./src/${forecast["logoMain"]}.png`);
+  $(".mainImg").attr("src", `./src/${forecast["logoMain"]}.webp`);
   $(".time").text(forecast["timee"]);
   $(".day").text(forecast["dateLong"]);
   $("#greetingText").text(forecast["greeting"]);
@@ -537,7 +537,7 @@ function featch5DaysForecast(id) {
         $(".daysForecast").append(`<div class="card shadow200 delay${
           index * 30
         }">
-                        <img class="mainImg shadow100" src="./src/${icon}.png" />
+                        <img class="mainImg shadow100" src="./src/${icon}.webp" />
                         <p>${dayShort}</p>
                         <p>${temp}°C</p>
                     </div>`);
