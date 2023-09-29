@@ -1,4 +1,4 @@
-var key = "Vd2A639l5odiM8WLD7VYIzVEe0pomhgI";
+var key = "wgAKaXr0eVsL8cvrkGCI6eDLVMW0zj8d";
 var openWeatherKey = "057ea05bc9005063c0e92dab1ff6b0c1";
 // var sunny = ["Sunny", "Mostly Sunny", "Partly Sunny"];
 // var night = ["Clear", "Mostly Clear"];
@@ -272,7 +272,7 @@ function setForecast(forecast) {
   $("#location1").text(forecast["location"]);
   $("#location").text(forecast["location"]);
   $(".dateMain").text("Today, " + forecast["monthLong"]);
-  $(".tempMainMain").text(forecast["temp"] + "°C");
+  $(".tempMain").text(forecast["temp"] + "°C");
   $(".dayTypeMain").text(forecast["weatherText"]);
   $("#windSpeed").text(forecast["windSpeed"] + " km/h");
   $("#hum").text(forecast["hum"] + " %");
@@ -296,10 +296,10 @@ function weatherIcon(weatherText, isDayTime) {
   } else if ((weatherText in thunderNight) & (isDayTime == false)) {
     logoMain = "thunderNight";
   } else {
-    if (isDayTime == true) {
-      logoMain = "sunny";
-    } else {
+    if (isDayTime == false) {
       logoMain = "night";
+    } else {
+      logoMain = "sunny";
     }
   }
   return logoMain;
